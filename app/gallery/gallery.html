@@ -1,0 +1,63 @@
+<nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand" href="#">
+        <img src="../logo.png" width="120" height="60" class="d-inline-block align-top" />
+    </a>
+</nav>
+<div id="menu-outer">
+  <div class="table">
+  <div class="text-center">
+    <button class="button" ng-click="changeRoute('/search')"><span class="save">Search</span></button>
+  </div>
+  <div class="text-center">
+  <button>Currently Reading</button>
+  </div>
+    <ul id="horizontal-list">
+      <li ng-repeat="(key,item) in books['Currently Reading'] track by $index">
+        <img ng-src="{{item.url}}" width="160px" height="180px" alt="list item 1" />
+        <div class="dropdown">
+            <button class="dropbtn"><i class="arrow down"></i></button>
+            <div class="dropdown-content">
+                <a ng-click="reorder(key,'Currently Reading','Currently Reading')"><span ng-show="item.type === 'Currently Reading'">&#10004;&nbsp;</span>Currently Reading</a>
+                <a ng-click="reorder(key,'Currently Reading','Want To Read')"><span ng-show="item.type === 'Want To Read'">&#10004;&nbsp;</span>Want To Read</a>
+                <a ng-click="reorder(key,'Currently Reading','Read')"><span ng-show="item.type === 'Read'">&#10004;&nbsp;</span>Read</a>
+            </div>
+        </div>
+      </li>
+      
+    </ul>
+    <div class="text-center">
+    <button>Want To Read</button>
+    </div>
+    <ul id="horizontal-list">
+      <li ng-repeat="(key,item) in books['Want To Read'] track by $index">
+        <img ng-src="{{item.url}}" width="160px" height="180px" alt="list item 1" />
+        <div class="dropdown">
+            <button class="dropbtn"><i class="arrow down"></i></button>
+            <div class="dropdown-content">
+                <a ng-click="reorder(key,'Want To Read','Currently Reading')"><span ng-show="item.type === 'Currently Reading'">&#10004;&nbsp;</span>Currently Reading</a>
+                <a ng-click="reorder(key,'Want To Read','Want To Read')"><span ng-show="item.type === 'Want To Read'">&#10004;&nbsp;</span>Want To Read</a>
+                <a ng-click="reorder(key,'Want To Read','Read')"><span ng-show="item.type === 'Read'">&#10004;&nbsp;</span>Read</a>
+            </div>
+        </div>
+      </li>
+      
+    </ul>
+    <div class="text-center">
+    <button>Read</button>
+    </div>
+    <ul id="horizontal-list">
+      <li ng-repeat="(key,item) in books['Read'] track by $index">
+        <img ng-src="{{item.url}}" width="160px" height="180px" alt="list item 1" />
+        <div class="dropdown">
+            <button class="dropbtn"><i class="arrow down"></i></button>
+            <div class="dropdown-content">
+                <a ng-click="reorder(key,'Read','Currently Reading')"><span ng-show="item.type === 'Currently Reading'">&#10004;&nbsp;</span>Currently Reading</a>
+                <a ng-click="reorder(key,'Read','Want To Read')"><span ng-show="item.type === 'Want To Read'">&#10004;&nbsp;</span>Want To Read</a>
+                <a ng-click="reorder(key,'Read','Read')"><span ng-show="item.type === 'Read'">&#10004;&nbsp;</span>Read</a>
+            </div>
+        </div>
+      </li>
+      
+    </ul>
+  </div>
+</div>

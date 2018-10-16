@@ -1,25 +1,162 @@
-/* app css stylesheet */
+body {
+  margin: 0;
+  padding: 0;
+}
 
-.menu {
+input[type=text] {
+  width: 230px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: white;
+  background-image: url('./searchicon.png');
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  transition: width 0.4s ease-in-out;
+}
+
+input[type=text]:focus {
+  width: 100%;
+}
+
+.text-center {
+  padding: 20px;
+  text-align: center;
+}
+
+.text-center button {
+  background-color: #4CAF50;
+  /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.button {
+  border-radius: 4px;
+  background-color: #8b4513;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 15px;
+  padding: 10px;
+  font-weight: 700;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button .save {
+  content: '\00bb';
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.table {
+  display: table;
+  margin: 0 auto;
+}
+
+ul#horizontal-list {
+  min-width: 696px;
   list-style: none;
-  border-bottom: 0.1em solid black;
-  margin-bottom: 2em;
-  padding: 0 0 0.5em;
+  margin: 20px;
 }
 
-.menu:before {
-  content: "[";
-}
-
-.menu:after {
-  content: "]";
-}
-
-.menu > li {
+ul#horizontal-list li {
   display: inline;
+  padding: 20px;
 }
 
-.menu > li + li:before {
-  content: "|";
-  padding-right: 0.3em;
+.dropbtn {
+  background-color: #B4DC1C;
+  color: white;
+  padding: 6px 16px 8px 16px;
+  font-size: 16px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
 }
+
+.book-tag{
+  display:inline-block;
+  position:absolute;
+  background:white;
+  color:#4E504A;
+}
+.dropdown {
+  display: inline-block;
+  position: relative;
+  margin: 0 0 0 -3%;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 6px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #82BA2D;
+}
+
+i {
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+}
+
+.down {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+COPY TO CLIPBOARD  SELECT ALL

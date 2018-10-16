@@ -1,0 +1,28 @@
+<nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand" href="#">
+        <img src="../logo.png" width="120" height="60" class="d-inline-block align-top"/>
+    </a>
+</nav>
+<br/>
+<div class="text-center">
+    <button class="button" ng-click="changeRoute('/gasllery')"><span class="save">Back</span></button>
+  </div>
+<div class="text-center ml-4 mr-4">
+    <input class="search-filter" type="text" ng-model="searchText" ng-change="change(searchText)" placeholder="Search for books..">
+</div>
+<ul id="horizontal-list">
+      <li ng-repeat="(key,item) in allBooks track by $index">
+        <span class="book-tag">{{item.type}}</span>
+        <img ng-src="{{item.url}}" width="160px" height="180px" alt="list item 1" />
+        <div class="dropdown">
+            <button class="dropbtn"><i class="arrow down"></i></button>
+            <div class="dropdown-content">
+                <a  ng-click="add(key,'Currently Reading')">Currently Reading</a>
+                <a  ng-click="add(key,'Want To Read')">Want To Read</a>
+                <a  ng-click="add(key,'Read')">Read</a>
+            </div>
+        </div>
+        <span></span>
+      </li>
+      
+    </ul>
